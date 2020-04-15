@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B3E7B58A1CC2AC0600A0062D /* AntIos1.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* AntIos1.m */; };
 		C3E95484D26813CDC9C72A56 /* Pods_AntIos1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78DCF1DBC3E10E86295DCF70 /* Pods_AntIos1.framework */; };
+		F11AC7DF244703E700D9056B /* LiveStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11AC7DE244703E700D9056B /* LiveStream.swift */; };
+		F11AC7E12447055900D9056B /* LiveStream.m in Sources */ = {isa = PBXBuildFile; fileRef = F11AC7E02447055900D9056B /* LiveStream.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +32,9 @@
 		78DCF1DBC3E10E86295DCF70 /* Pods_AntIos1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AntIos1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7B5881CC2AC0600A0062D /* AntIos1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AntIos1.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* AntIos1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntIos1.m; sourceTree = "<group>"; };
+		F11AC7DD244703E700D9056B /* AntIos1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AntIos1-Bridging-Header.h"; sourceTree = "<group>"; };
+		F11AC7DE244703E700D9056B /* LiveStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveStream.swift; sourceTree = "<group>"; };
+		F11AC7E02447055900D9056B /* LiveStream.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LiveStream.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,9 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				F11AC7E02447055900D9056B /* LiveStream.m */,
+				F11AC7DE244703E700D9056B /* LiveStream.swift */,
+				F11AC7DD244703E700D9056B /* AntIos1-Bridging-Header.h */,
 				B3E7B5881CC2AC0600A0062D /* AntIos1.h */,
 				B3E7B5891CC2AC0600A0062D /* AntIos1.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -69,7 +77,6 @@
 				455C1F120EDDEAB63CE23923 /* Pods-AntIos1.debug.xcconfig */,
 				132BD3D9600BA591767A1680 /* Pods-AntIos1.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -113,6 +120,7 @@
 				TargetAttributes = {
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -121,6 +129,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -164,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* AntIos1.m in Sources */,
+				F11AC7E12447055900D9056B /* LiveStream.m in Sources */,
+				F11AC7DF244703E700D9056B /* LiveStream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,16 +278,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 455C1F120EDDEAB63CE23923 /* Pods-AntIos1.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AntIos1;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AntIos1-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -284,16 +300,20 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 132BD3D9600BA591767A1680 /* Pods-AntIos1.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
 				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = AntIos1;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AntIos1-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
